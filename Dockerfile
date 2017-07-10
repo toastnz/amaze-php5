@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER Brett Tasker "<brett@silverstripe.com>"
+MAINTAINER Danae Miller-Clendon "<danae@toast.co.nz>"
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install components
@@ -15,6 +15,9 @@ RUN apt-get update -y && apt-get install -y \
 		zlib1g-dev \
 		libicu-dev \
 		g++ \
+		nano \
+		wget
+
 	--no-install-recommends && \
 	curl -sS https://silverstripe.github.io/sspak/install | php -- /usr/local/bin && \
 	pecl install xdebug && \
@@ -44,7 +47,15 @@ RUN docker-php-ext-configure intl && \
 		pdo_mysql \
 		soap \
 		tidy \
-		xsl
+		xsl \
+		rsync \
+		mailparse \
+		lzf \
+		oauth \
+		pdf \
+		phar \
+		uploadprogress \
+		zip
 
 # Apache + xdebug configuration
 RUN { \
