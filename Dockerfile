@@ -17,6 +17,7 @@ RUN apt-get update -y && apt-get install -y \
 		g++ \
 		nano \
 		wget \
+		rsync \
 
 	--no-install-recommends && \
 	curl -sS https://silverstripe.github.io/sspak/install | php -- /usr/local/bin && \
@@ -47,15 +48,7 @@ RUN docker-php-ext-configure intl && \
 		pdo_mysql \
 		soap \
 		tidy \
-		xsl \
-		rsync \
-		mailparse \
-		lzf \
-		oauth \
-		pdf \
-		phar \
-		uploadprogress \
-		zip
+		xsl
 
 # Apache + xdebug configuration
 RUN { \
