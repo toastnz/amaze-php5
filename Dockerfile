@@ -18,6 +18,7 @@ RUN apt-get update -y && apt-get install -y \
 		nano \
 		wget \
 		rsync \
+		mysql-client \
 
 	--no-install-recommends && \
 	curl -sS https://silverstripe.github.io/sspak/install | php -- /usr/local/bin && \
